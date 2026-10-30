@@ -1,3 +1,6 @@
+import numbers
+
+
 def count_occurrences(numbers, target):
     count = 0
     for num in numbers:

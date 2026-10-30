@@ -20,5 +20,5 @@ def path_exists(graph, start, target):
             if neighbor not in visited:
                 visited.add(neighbor)
                 stack.append(neighbor)
-                
+             
     return False
