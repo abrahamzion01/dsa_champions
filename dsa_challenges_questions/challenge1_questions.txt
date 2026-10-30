@@ -1,0 +1,196 @@
+Problem 1: Find the Largest Number in a List
+Description
+Write a Python function named find_largest(numbers) that takes a list of numbers and returns the largest number in the list.
+Constraints
+Do not use max().
+Do not use sort() or sorted().
+If the list is empty, return None.
+Aim for O(n) time complexity and O(1) auxiliary space.
+Examples
+Example 1
+Input: [3, 41, 56, 21, 76, 9]
+Output: 76
+Example 2
+Input: [-10, -5, -2, -18]
+Output: -2
+Example 3
+Input: []
+Output: None
+Hints
+What value could you assume is the largest before checking the rest?
+Compare each number with the current largest value.
+When you find a larger number, update what you are storing.
+Problem 2: Find the Smallest Number in a List
+Description
+Write a function named find_smallest(numbers) that returns the smallest number in a list.
+Constraints
+Do not use min().
+Do not sort the list.
+Return None if the list is empty.
+Aim for O(n) time complexity.
+Examples
+Example 1
+Input: [8, 3, 12, 1, 7]
+Output: 1
+Example 2
+Input: [-3, -10, -1, -6]
+Output: -10
+Hints
+Start by remembering one number from the list.
+Visit every other number.
+Ask: "Is this number smaller than the smallest one I have seen?"
+
+Problem 3: Sum All Numbers
+Description
+Write a function named list_sum(numbers) that calculates and returns the total of all numbers in a list.
+Constraints
+Do not use Python's built-in sum() function.
+Return 0 for an empty list.
+Aim for O(n) time complexity.
+Examples
+Example 1
+Input: [2, 4, 6, 8]
+Output: 20
+Example 2
+Input: [-5, 10, -2]
+Output: 3
+Example 3
+Input: []
+Output: 0
+Hints
+Create a variable that starts at 0.
+Visit each number in the list.
+Add each number to the value you are keeping.
+
+Problem 4: Count Even Numbers
+Description
+Write a function named count_even(numbers) that returns how many even numbers are in a list.
+Constraints
+Do not create another list containing the even numbers.
+Return 0 if there are no even numbers.
+Aim for O(n) time complexity.
+Examples
+Example 1
+Input: [1, 2, 3, 4, 6]
+Output: 3
+Example 2
+Input: [1, 3, 5, 7]
+Output: 0
+Hints
+You need a variable to keep track of the count.
+Remember that % gives you the remainder after division.
+What remainder does an even number have when divided by 2?
+
+Problem 5: Count Occurrences
+Description
+Write a function named count_occurrences(numbers, target) that returns how many times target appears in the list.
+Do not use the built-in count() method.
+Aim for O(n) time complexity.
+Examples
+Example 1
+Input: numbers = [2, 5, 2, 8, 2], target = 2
+Output: 3
+Example 2
+Input: numbers = [1, 4, 7], target = 10
+Output: 0
+Hints
+Start a counter at 0.
+Check every value in the list.
+Increase the counter whenever the current value equals target.
+
+Problem 6: Find a Number in a List
+Description
+Write a function named find_number(numbers, target) that searches for target.
+Return its index if it exists. Return -1 if it does not exist.
+If the target appears more than once, return the index of its first occurrence.
+Constraints
+Do not use index().
+Do not use in.
+Aim for O(n) time complexity.
+Examples
+Example 1
+Input: numbers = [10, 25, 30, 45], target = 30
+Output: 2
+Example 2
+Input: numbers = [5, 8, 5, 9], target = 5
+Output: 0
+Example 3
+Input: numbers = [10, 20, 30], target = 99
+Output: -1
+Hints
+You need both the value and its position while looping.
+Think about range() or enumerate().
+As soon as you find the target, you can return its position.
+Problem 7: Reverse a List
+Description
+Write a function named reverse_list(items) that returns the elements of a list in reverse order.
+Constraints
+Do not use reverse().
+Do not use reversed().
+Do not use [::-1].
+Examples
+Example 1
+Input: [1, 2, 3, 4]
+Output: [4, 3, 2, 1]
+Example 2
+Input: ["a", "b", "c"]
+Output: ["c", "b", "a"]
+Hints
+Think about the position of the last element.
+Can you move through the list from the last index toward index 0?
+Add each value you visit to a new list.
+
+Problem 8: Check if a List Contains Duplicates
+Description
+Write a function named has_duplicates(numbers) that returns True if any number appears more than once and False otherwise.
+Examples
+Example 1
+Input: [1, 2, 3, 2]
+Output: True
+Example 2
+Input: [1, 2, 3, 4]
+Output: False
+Example 3
+Input: []
+Output: False
+Hints
+You need a way to remember numbers you have already seen.
+Before storing the current number, check whether you have seen it before.
+A Python set can help with fast membership checks.
+
+Problem 9: Find the First Duplicate
+Description
+Write a function named first_duplicate(numbers) that returns the first number that appears more than once while moving from left to right.
+Return None if there are no duplicates.
+Examples
+Example 1
+Input: [4, 7, 2, 7, 5, 4]
+Output: 7
+Example 2
+Input: [1, 2, 3, 4]
+Output: None
+Example 3
+Input: [5, 5, 3]
+Output: 5
+Hints
+Keep track of values you have already visited.
+For every new number, check whether it has already been seen.
+You can return immediately when you discover the first repeated value.
+
+Problem 10: Move All Zeros to the End
+Description
+Write a function named move_zeros(numbers) that returns a list where all zeros have been moved to the end while keeping the other numbers in their original order.
+Examples
+Example 1
+Input: [0, 1, 0, 3, 12]
+Output: [1, 3, 12, 0, 0]
+Example 2
+Input: [1, 2, 3]
+Output: [1, 2, 3]
+Example 3
+Input: [0, 0, 5]
+Output: [5, 0, 0]
+Hints
+First think about what should happen to the non-zero values.
+Keep track of how many zeros you encounter.
+After processing the numbers, how could you add the correct number of zeros?

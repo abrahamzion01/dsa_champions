@@ -1,0 +1,269 @@
+Challenge 1: Find the Second Largest Distinct Number
+Problem
+Write a function:
+def second_largest(numbers):
+    pass
+Return the second largest distinct number in the list.
+If there is no second distinct number, return None.
+Examples
+[10, 5, 8, 10, 3] → 8
+[4, 4, 4] → None
+[-5, -2, -8, -3] → -3
+Constraints
+Do not use sort() or sorted().
+Do not use max().
+Try to solve it in O(n) time.
+Vital Hints
+You do not need to rearrange the list.
+Think about keeping track of two values while looping.
+When you find a new largest number, what should happen to the old largest?
+Be careful when the same largest number appears more than once.
+Test with negative numbers.
+Further Hint: Review W3Schools — Lists and Arrays.
+
+Challenge 2: Move Zeros to the End In-Place
+Problem
+Write a function:
+def move_zeros(numbers):
+    pass
+Move all zeros to the end of the list while keeping the order of the non-zero numbers unchanged.
+Modify the original list instead of creating another list.
+Examples
+[0, 1, 0, 3, 12] → [1, 3, 12, 0, 0]
+
+[4, 0, 5, 0, 2] → [4, 5, 2, 0, 0]
+
+[1, 2, 3] → [1, 2, 3]
+Constraints
+Do not create another list containing the answer.
+Try to complete the work in O(n) time.
+Vital Hints
+Think about one position that tells you where the next non-zero number belongs.
+Move through the list and place non-zero values toward the front.
+Once the non-zero numbers are correctly positioned, what should fill the remaining positions?
+Further Hint: Review W3Schools — Lists and Arrays.
+
+Challenge 3: Check for Balanced Brackets
+Problem
+Write a function:
+def balanced_brackets(text):
+    pass
+Return True if all brackets in the string are correctly opened and closed.
+Support:
+()
+[]
+{}
+Examples
+"(hello)" → True
+"{[()]}" → True
+"([)]" → False
+"((hello)" → False
+Characters that are not brackets can be ignored.
+Vital Hints
+A closing bracket must match the most recently opened bracket.
+Which data structure follows Last In, First Out (LIFO)?
+Add opening brackets to that structure.
+When you encounter a closing bracket, compare it with the most recent opening bracket.
+At the end, there should be no unmatched opening brackets left.
+Further Hint: Review W3Schools — Stacks with Python.
+
+Challenge 4: Reverse the First K Items of a Queue
+Problem
+Write a function:
+def reverse_first(queue, k):
+    pass
+Reverse only the first k items of a queue while leaving the remaining items in their original order.
+Example
+Queue: [10, 20, 30, 40, 50]
+k = 3
+
+Result:
+[30, 20, 10, 40, 50]
+Another example:
+Queue: [1, 2, 3, 4]
+k = 2
+
+Result:
+[2, 1, 3, 4]
+Vital Hints
+A queue normally removes items from the front.
+Remove the first k items temporarily.
+What data structure could reverse their order for you?
+After adding those reversed items back, make sure the untouched queue items remain behind them.
+Python's collections.deque may be useful.
+Further Hint: Review W3Schools — Queues with Python and Stacks with Python.
+
+Challenge 5: Find the Most Frequent Number
+Problem
+Write a function:
+def most_frequent(numbers):
+    pass
+Return the number that appears most often.
+If two numbers appear the same number of times, return the one that appeared first in the original list.
+Return None for an empty list.
+Examples
+[2, 5, 2, 8, 2, 5] → 2
+
+[4, 7, 7, 4] → 4
+
+[] → None
+Constraints
+Do not repeatedly call count() for every number.
+Aim for O(n) time.
+Vital Hints
+You need to remember how many times each value has appeared.
+A dictionary can connect:
+number → frequency
+First build the frequency information.
+Then think about how to respect the "first appearance wins" rule when frequencies are equal.
+Further Hint: Review W3Schools — Hash Tables with Python.
+Challenge 6: Find the Closest Number
+Problem
+Write a function:
+def closest_number(numbers, target):
+    pass
+Return the number whose value is closest to target.
+If two numbers are equally close, return the smaller number.
+Examples
+numbers = [4, 8, 15, 20]
+target = 13
+
+Output: 15
+Because:
+|15 - 13| = 2
+Another example:
+numbers = [8, 12]
+target = 10
+
+Output: 8
+Both are equally close, so the smaller value wins.
+Vital Hints
+Start by assuming one number is currently the closest.
+Visit every number.
+Compare the distance between each number and the target.
+abs() can help calculate distance.
+You may need a second condition to handle equal distances.
+Further Hint: Review W3Schools — Linear Search with Python.
+Challenge 7: Find the First Position Using Binary Search
+Problem
+You are given a sorted list that may contain duplicate numbers.
+Write:
+def first_position(numbers, target):
+    pass
+Return the index of the first occurrence of target.
+Return -1 if the target does not exist.
+Examples
+numbers = [2, 4, 4, 4, 8, 10]
+target = 4
+
+Output: 1
+numbers = [1, 3, 5, 7]
+target = 6
+
+Output: -1
+Constraints
+Use binary search.
+Do not scan through the entire list after finding the target.
+Aim for O(log n) time.
+Vital Hints
+Normal binary search stops when it finds the target.
+For this problem, finding the target does not necessarily mean you are finished.
+Ask yourself:
+If I find 4, could another 4 exist somewhere to its left?
+Store the position you found and continue searching the appropriate half.
+Further Hint: Review W3Schools — Binary Search with Python.
+
+Challenge 8: Insertion Sort with Shift Counter
+Problem
+Implement insertion sort:
+def insertion_sort(numbers):
+    pass
+Sort the numbers from smallest to largest.
+In addition to the sorted list, return the number of times an element had to be shifted to make space for another value.
+Example
+Input:
+[5, 3, 4]
+The final list should be:
+[3, 4, 5]
+Your function should also report how many shifts happened during the sorting process.
+Constraints
+Do not use sort().
+Do not use sorted().
+Implement the insertion sort algorithm yourself.
+Vital Hints
+Think about arranging playing cards in your hand.
+Take one value at a time and compare it with the values before it.
+When a previous value is too large:
+move it one position to the right
+Keep a counter and increase it every time such a shift happens.
+Further Hint: Review W3Schools — Insertion Sort with Python.
+
+Challenge 9: Count the Leaf Nodes in a Binary Tree
+Problem
+A leaf node is a node with no left child and no right child.
+Write:
+def count_leaves(root):
+    pass
+Return the number of leaf nodes in a binary tree.
+Assume nodes use this structure:
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+For a tree like:
+       8
+       / \
+      3   10
+     / \    \
+    1   6    14
+The leaf nodes are:
+1, 6, 14
+So the result is:
+3
+Vital Hints
+Ask these questions about every node:
+Does this node exist?
+Does it have a left child?
+Does it have a right child?
+A node is a leaf only when both children are missing.
+The same problem must then be checked for the left and right parts of the tree.
+This is a good place to think about recursion.
+Further Hint: Review W3Schools — Trees with Python.
+
+Challenge 10: Is There a Path?
+Problem
+A graph is represented using a dictionary:
+graph = {
+    "A": ["B", "C"],
+    "B": ["D"],
+    "C": ["E"],
+    "D": [],
+    "E": ["F"],
+    "F": []
+}
+Write:
+def path_exists(graph, start, target):
+    pass
+Return True if it is possible to travel from start to target.
+Otherwise return False.
+Examples
+start = "A"
+target = "F"
+
+Output: True
+Because one possible path is:
+A → C → E → F
+Another example:
+start = "D"
+target = "A"
+
+Output: False
+Vital Hints
+Start from the first node.
+Look at its neighbours.
+Continue exploring neighbours until you either find the target or run out of nodes.
+Keep track of nodes you have already visited.
+Why is remembering visited nodes important if a graph contains a cycle?
+You can solve this using either a queue or a stack.
+Further Hint: Review W3Schools — Graphs with Python.
